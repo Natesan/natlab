@@ -1,21 +1,81 @@
 import React from "react"
-import { Link } from "gatsby"
 
+import Container from "../components/container"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Timer from "react-compound-timer"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import { IoIosPlay, IoIosPause, IoMdRefresh } from "react-icons/io"
+import { MdStop } from "react-icons/md"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <Container>
+    <Layout>
+      <SEO title="Utility" />
+      <div class="container mb-3 text-center">
+        <Timer initialTime={0} startImmediately={false}>
+          {({ start, resume, pause, stop, reset }) => (
+            <React.Fragment>
+              <div class="card d-flex flex-row flex-wrap justify-content-between mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <Timer.Hours />
+                  </h5>
+                  <p class="card-text">Hours</p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <Timer.Minutes />
+                  </h5>
+                  <p class="card-text">Minutes</p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <Timer.Seconds />
+                  </h5>
+                  <p class="card-text">Seconds</p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <Timer.Milliseconds />
+                  </h5>
+                  <p class="card-text">Milliseconds</p>
+                </div>
+              </div>
+              <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
+                <IoIosPlay
+                  // key={link.type}
+                  onClick={start}
+                  fontSize="60px"
+                  className="cursor mx-2"
+                />
+                <IoIosPause
+                  // key={link.type}
+                  onClick={pause}
+                  fontSize="60px"
+                  className="cursor  mx-2"
+                />
+                {/* <button onClick={resume}>Resume</button> */}
+                <MdStop
+                  // key={link.type}
+                  onClick={stop}
+                  fontSize="60px"
+                  className="cursor mx-2"
+                />
+                <IoMdRefresh
+                  // key={link.type}
+                  onClick={reset}
+                  fontSize="60px"
+                  className="cursor mx-2"
+                />
+              </div>
+            </React.Fragment>
+          )}
+        </Timer>
+      </div>
+    </Layout>
+  </Container>
 )
 
 export default IndexPage
