@@ -1,4 +1,5 @@
 import React from "react"
+import Timer1 from "react-timer"
 
 import Container from "../components/container"
 import Layout from "../components/layout"
@@ -8,12 +9,13 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import { IoIosPlay, IoIosPause, IoMdRefresh } from "react-icons/io"
 import { MdStop } from "react-icons/md"
-
+const OPTIONS = { prefix: "seconds elapsed!", delay: 100 }
 const IndexPage = () => (
   <Container>
     <Layout>
       <SEO title="Utility" />
       <div class="container mb-3 text-center">
+        <Timer1 options={OPTIONS} />
         <Timer initialTime={0} startImmediately={false}>
           {({ start, resume, pause, stop, reset }) => (
             <React.Fragment>
