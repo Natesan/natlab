@@ -16,7 +16,7 @@ const IndexPage = () => (
       <SEO title="Utility" />
       <div class="container mb-3 text-center">
         <Timer1 options={OPTIONS} />
-        <Timer initialTime={0} startImmediately={false}>
+        {/* <Timer initialTime={0} startImmediately={false}>
           {({ start, resume, pause, stop, reset }) => (
             <React.Fragment>
               <div class="card d-flex flex-row flex-wrap justify-content-between mb-3">
@@ -58,7 +58,7 @@ const IndexPage = () => (
                   fontSize="60px"
                   className="cursor  mx-2"
                 />
-                {/* <button onClick={resume}>Resume</button> */}
+                <button onClick={resume}>Resume</button>
                 <MdStop
                   // key={link.type}
                   onClick={stop}
@@ -74,7 +74,7 @@ const IndexPage = () => (
               </div>
             </React.Fragment>
           )}
-        </Timer>
+        </Timer> */}
       </div>
     </Layout>
   </Container>
