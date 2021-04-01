@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Timer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Utility`,
+    description: `Bunch of projects / utilities that I build to make my way out of usual work`,
     author: `@natesan.sivagnanam`,
+    url: "https://www.natesan.netlify.app",
+    twitterUsername: "@NatesanSiv",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
