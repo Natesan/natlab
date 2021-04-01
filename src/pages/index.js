@@ -1,21 +1,67 @@
 import React from "react"
-import Timer from "react-timer"
+import { useTimer, useStopwatch } from "react-timer-hook"
 
 import Container from "../components/container"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-const OPTIONS = { prefix: "seconds elapsed!", delay: 100 }
-const IndexPage = () => (
-  <Container>
+function IndexPage() {
+
+  const time = new Date()
+  time.setSeconds(time.getSeconds() + 300) 
+
+  const {
+    seconds,
+    minutes,
+    hours,
+    days,
+    isRunning,
+    start,
+    pause,
+    resume,
+    restart,
+  } = useTimer({
+    expiryTimestamp: time,
+    onExpire: () => console.warn("onExpire called"),
+  })
+
+  return (
     <Layout>
-      <SEO title="Utility" />
-      <div class="container mb-3 text-center">
-        <Timer options={OPTIONS} />
-      </div>
+      <Container>
+        <SEO title="Utility" />
+        <div className="container mb-3 text-center">
+          <h2>Timers</h2>
+          <div style={{ textAlign: "center" }}>
+            <h4>Count Down Timer</h4>
+            <div style={{ fontSize: "100px" }}>
+              <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
+              <span>{seconds}</span>
+            </div>
+            <p>{isRunning ? "Running" : "Not running"}</p>
+            <button onClick={start}>Start</button>
+            <button id="pause" onClick={pause}>Pause</button>
+            <button id="resume" onClick={resume}>Resume</button>
+            <button
+              onClick={() => {
+                // Restarts to 5 minutes timer
+                const time = new Date()
+                time.setSeconds(time.getSeconds() + 300)
+                restart(time)
+              }}
+            >
+              Restart
+            </button>
+          </div>
+        </div>
+      </Container>
+      <Container>
+        <div className="container mb-3 text-center">
+          <h2>(Page Visibility API Prototype)</h2>
+        </div>
+      </Container>
     </Layout>
-  </Container>
-)
+  )
+}
 
 export default IndexPage

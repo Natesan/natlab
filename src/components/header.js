@@ -7,6 +7,7 @@ const Header = ({ siteTitle }) => (
     className="text-center"
     style={{
       marginBottom: `1.45rem`,
+      marginTop: `1.45rem`,
     }}
   >
     <div
