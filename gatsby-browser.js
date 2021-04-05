@@ -6,15 +6,15 @@ export const onClientEntry = () => {
       if (document.hidden) {
         console.log(
           "🚀 ~ file: gatsby-browser.js ~ line 11 ~ handleVisibilityChange ~ tabOut()"
-        );
-        // pause();
-        document.getElementById('pause').click();
+        )
+        document.getElementById("count-down-pause").click()
+        document.getElementById("count-up-pause").click()
       } else {
         console.log(
           "🚀 ~ file: gatsby-browser.js ~ line 13 ~ handleVisibilityChange ~ tabIn()"
-        );
-        // resume();
-        document.getElementById('resume').click();
+        )
+        document.getElementById("count-down-resume").click()
+        document.getElementById("count-up-start").click()
       }
     }
 
