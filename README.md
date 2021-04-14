@@ -10,3 +10,4 @@ A playground to try things out which are some of my day to day necessities.
 * Toggle Page Visibility API and use the page as a common timer
 * Page performance improvement comparison
 * Screen Wake Lock API implementation
+* Allow Push Notification API to send notification to the user

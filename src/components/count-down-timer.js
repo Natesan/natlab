@@ -3,14 +3,14 @@ import { useTimer } from "react-timer-hook"
 
 function CountDownTimer() {
   const time = new Date()
-  time.setSeconds(time.getSeconds() + 300)
+  time.setSeconds(time.getSeconds() + 1500)
 
   const {
     seconds,
     minutes,
     hours,
     days,
-    isRunning,
+    // isRunning,
     start,
     pause,
     resume,
@@ -23,7 +23,7 @@ function CountDownTimer() {
   return (
     <div className="text-center my-3">
       <h4>Count Down Timer</h4>
-      <div style={{ fontSize: "100px", width: "400px" }}>
+      <div style={{ fontSize: "100px", width: "430px" }}>
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
         <span>{seconds}</span>
       </div>

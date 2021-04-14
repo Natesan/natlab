@@ -3,14 +3,14 @@ import { useStopwatch } from "react-timer-hook"
 
 function CountUpTimer() {
   const time = new Date()
-  time.setSeconds(time.getSeconds() + 300)
+  time.setSeconds(time.getSeconds() + 1500)
 
   const {
     seconds,
     minutes,
     hours,
     days,
-    isRunning,
+    // isRunning,
     start,
     pause,
     reset,
@@ -19,7 +19,7 @@ function CountUpTimer() {
   return (
     <div className="text-center my-3">
       <h4>Count Up Timer</h4>
-      <div style={{ fontSize: "100px", width: "400px" }}>
+      <div style={{ fontSize: "100px", width: "430px" }}>
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
         <span>{seconds}</span>
       </div>
