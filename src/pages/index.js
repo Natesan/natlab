@@ -20,7 +20,9 @@ function IndexPage() {
       </Container>
       <Container>
         <div className="container mb-3 text-center">
-          <h2>(Page Visibility API Prototype)</h2>
+          <h2>Web API Implementations used on this page</h2>
+          <h5>Page Visibility API</h5>
+          <h5>Notification API</h5>
         </div>
       </Container>
     </Layout>

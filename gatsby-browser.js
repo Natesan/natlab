@@ -2,6 +2,13 @@ import "./src/styles/global.css"
 
 export const onClientEntry = () => {
   window.onload = () => {
+    let promise = Notification.requestPermission()
+    promise.then(handleNotification)
+
+    function handleNotification() {
+      console.log("🚀 ~ file: gatsby-browser.js ~ line 9 ~ handleNotification")
+    }
+
     function handleVisibilityChange() {
       if (document.hidden) {
         console.log(
