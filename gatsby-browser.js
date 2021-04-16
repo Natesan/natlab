@@ -2,11 +2,17 @@ import "./src/styles/global.css"
 
 export const onClientEntry = () => {
   window.onload = () => {
-    let promise = Notification.requestPermission()
-    promise.then(handleNotification)
-
-    function handleNotification() {
-      console.log("🚀 ~ file: gatsby-browser.js ~ line 9 ~ handleNotification")
+    if (!("Notification" in window)) {
+      console.log("🚀 ~ file: gatsby-browser.js ~ line 20 ~ onClientEntry ~ This browser does not support notifications")
+    } else {
+      let promise = Notification.requestPermission()
+      promise.then(handleNotification)
+    }
+    function handleNotification(result) {
+      console.log(
+        "🚀 ~ file: gatsby-browser.js ~ line 9 ~ handleNotification ",
+        result
+      )
     }
 
     function handleVisibilityChange() {
