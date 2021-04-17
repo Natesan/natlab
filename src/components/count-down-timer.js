@@ -3,7 +3,7 @@ import { useTimer } from "react-timer-hook"
 
 function CountDownTimer() {
   const time = new Date()
-  time.setSeconds(time.getSeconds() + 1500)
+  time.setSeconds(time.getSeconds() + 10)
 
   const {
     seconds,
@@ -17,7 +17,9 @@ function CountDownTimer() {
     restart,
   } = useTimer({
     expiryTimestamp: time,
-    onExpire: () => console.warn("onExpire called"),
+    onExpire: () => {
+      window.handleCountDownExpiration()
+    },
   })
 
   return (
